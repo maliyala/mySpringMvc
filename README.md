@@ -1,8 +1,8 @@
 # MySpringMVC
 **自己手动写一个简化版通过注释扫描的SpringMVC框架**
 
-|&emsp;[简介](#简介)&emsp; || &emsp;[运行流程及九大组件](# 一、运行流程及九大组件)&emsp; |
-|&emsp;[设计思路](# 二、设计思路)&emsp;||&emsp;[结构](#结构)&emsp;|
+|&emsp;[简介](#简介)&emsp; || &emsp;[运行流程及九大组件](# 运行流程及九大组件)&emsp; |
+|&emsp;[设计思路](# 设计思路)&emsp;||&emsp;[结构](#结构)&emsp;|
 |&emsp;[目的](#目的)&emsp; | 
 
 
@@ -19,7 +19,7 @@
 
 
 
-## 一、运行流程及九大组件
+## 运行流程及九大组件
 ### 1.1、SpringMVC的运行流程
 ![运行流程](https://static.oschina.net/uploads/space/2018/0222/091846_FTTR_3577599.png)
 
@@ -104,7 +104,7 @@
 【9. FlashMapManager】
 
     用来管理FlashMap的，FlashMap主要用在redirect中传递参数
-## 二、设计思路
+## 设计思路
 本文只实现注解读取，实现了@MyController，@MyRequestMapping，@MyRequestParam的注释。
 简化流程为：
 ### 2.1、加载配置
