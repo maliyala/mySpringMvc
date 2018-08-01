@@ -20,7 +20,7 @@
 
 
 ## 一、运行流程及九大组件
-###1.1、SpringMVC的运行流程
+### 1.1、SpringMVC的运行流程
 ![运行流程](https://static.oschina.net/uploads/space/2018/0222/091846_FTTR_3577599.png)
 
 ⑴ 用户发送请求至前端控制器DispatcherServlet
@@ -48,7 +48,7 @@
 
 从上面可以看出，DispatcherServlet有接收请求，响应结果，转发等作用。
 有了DispatcherServlet之后，可以减少组件之间的耦合度。
-###1.2、SpringMVC的九大组件
+### 1.2、SpringMVC的九大组件
 【1. HandlerMapping】
 
         是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，
@@ -104,18 +104,18 @@
 【9. FlashMapManager】
 
     用来管理FlashMap的，FlashMap主要用在redirect中传递参数
-##二、设计思路
+## 二、设计思路
 本文只实现注解读取，实现了@MyController，@MyRequestMapping，@MyRequestParam的注释。
 简化流程为：
-###2.1、加载配置
+### 2.1、加载配置
 - 初始化加载配置文件，从web.xml中获取到加载类地址，和配置文件地址。
-###2.2、初始化
+### 2.2、初始化
 DispatcherServlet的初始化会加载上述的9大组件，但是本文只以最简单实现：
 - 加载配置文件。
 - 初始化相关的类，即获取配置的扫描包下的类。
 - 拿到扫描的类，通过reflect.instance(反射机制的实例化），放到iocMap中，beanNmae，参见日常使用时类名首字母小写。
 - 初始化HandlerMapping，即让url与method相对应。
-###2.3、运行
+### 2.3、运行
 - 加拦截
 - 获取请求传入的参数并处理参数
 - 通过初始化好的handlerMapping中拿出url对应的方法名，反射调用
